@@ -107,38 +107,48 @@ img {
 
 
 label {
-	border-radius: 50%;
+	background: transparent;	
+	width: 2em;
+	height: 2em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.button{
 	width: 1em;
 	height: 1em;
+	border-radius: 50%;
 	background: #322ca3;
 	border: .1em solid #322ca3;
 }
 
-label:hover {
+label:hover { .button{
 	background: white;
 	cursor: pointer;
-	border: .1em solid white;
+	border: .1em solid white; }
 }
 
-#slide1:checked ~ #buttons label:nth-child(1),
-#slide2:checked ~ #buttons label:nth-child(2),
-#slide3:checked ~ #buttons label:nth-child(3),
-#slide4:checked ~ #buttons label:nth-child(4),
-#slide5:checked ~ #buttons label:nth-child(5) {
+#slide1:checked ~ #buttons label:nth-child(1) .button,
+#slide2:checked ~ #buttons label:nth-child(2) .button,
+#slide3:checked ~ #buttons label:nth-child(3) .button,
+#slide4:checked ~ #buttons label:nth-child(4) .button,
+#slide5:checked ~ #buttons label:nth-child(5) .button {
 	background: #2b2c33;
 	border: .1em solid #322ca3;
 }
 
-#slide1:checked ~ #buttons label:nth-child(1):hover,
-#slide2:checked ~ #buttons label:nth-child(2):hover,
-#slide3:checked ~ #buttons label:nth-child(3):hover,
-#slide4:checked ~ #buttons label:nth-child(4):hover,
-#slide5:checked ~ #buttons label:nth-child(5):hover {
+#slide1:checked ~ #buttons label:nth-child(1):hover .button,
+#slide2:checked ~ #buttons label:nth-child(2):hover .button,
+#slide3:checked ~ #buttons label:nth-child(3):hover .button,
+#slide4:checked ~ #buttons label:nth-child(4):hover .button,
+#slide5:checked ~ #buttons label:nth-child(5):hover .button {
 	background: #2b2c33;
 	border: .1em solid white;
 }
 
-#images_container, #slider, #slides, #buttons, #buttons label {
+#images_container, #slider, #slides, #buttons, #buttons label, .button {
 	transition: all 0.5s ease-out;
 }
 
