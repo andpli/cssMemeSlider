@@ -1,0 +1,144 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* *************************************************** */
+
+body {
+  color: white;
+  background: black;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+input {
+	display: none;
+}
+
+#slider {
+	text-align: center;
+	margin: 0 auto;
+	max-width: 80%;
+}
+
+#slides {
+	margin: 1% 5%;
+	padding: 1%;
+	background: #fff;
+	border-radius: 3%;
+}
+
+#container {
+	overflow: hidden;
+}
+
+#images_container {
+	width: 500%;
+	display: flex;
+	margin-left:-100%;
+}
+
+#slide1:checked ~ #slides #images_container { margin-left:0; }
+#slide2:checked ~ #slides #images_container { margin-left:-100%; }
+#slide3:checked ~ #slides #images_container { margin-left:-200%; }
+#slide4:checked ~ #slides #images_container { margin-left:-300%; }
+#slide5:checked ~ #slides #images_container { margin-left:-400%; }
+
+.img_box {
+	width: 20%;
+}
+
+img {
+	width: 70%;
+}
+
+#buttons {
+	display: flex;
+ 	gap: 1%;
+	justify-content: flex-end;
+	width: 95%;
+}
+
+
+label {
+	border-radius: 50%;
+	width: 1em;
+	height: 1em;
+	background: #322ca3;
+	border: .1em solid #322ca3;
+}
+
+label:hover {
+	background: white;
+	cursor: pointer;
+	border: .1em solid white;
+}
+
+#slide1:checked ~ #buttons label:nth-child(1),
+#slide2:checked ~ #buttons label:nth-child(2),
+#slide3:checked ~ #buttons label:nth-child(3),
+#slide4:checked ~ #buttons label:nth-child(4),
+#slide5:checked ~ #buttons label:nth-child(5) {
+	background: #2b2c33;
+	border: .1em solid #322ca3;
+}
+
+#slide1:checked ~ #buttons label:nth-child(1):hover,
+#slide2:checked ~ #buttons label:nth-child(2):hover,
+#slide3:checked ~ #buttons label:nth-child(3):hover,
+#slide4:checked ~ #buttons label:nth-child(4):hover,
+#slide5:checked ~ #buttons label:nth-child(5):hover {
+	background: #2b2c33;
+	border: .1em solid white;
+}
+
+#images_container, #slider, #slides, #buttons, #buttons label {
+	transition: all 0.5s ease-out;
+}
+
