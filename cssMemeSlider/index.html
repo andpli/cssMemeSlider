@@ -5,44 +5,54 @@
     <meta name="viewport" content="width=device-width">
     <title>CSS Mem Slider</title>
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/png" href="image/img.png">
 </head>
 
 <body>
 	<div id=slider>
-		<input checked type=radio name=slider id=slide1 />
-		<input type=radio name=slider id=slide2 />
-		<input type=radio name=slider id=slide3 />
-		<input type=radio name=slider id=slide4 />
-		<input type=radio name=slider id=slide5 />
+		<input checked type=radio name=slider id=slide1>
+		<input type=radio name=slider id=slide2>
+		<input type=radio name=slider id=slide3>
+		<input type=radio name=slider id=slide4>
+		<input type=radio name=slider id=slide5>
 		<div id=slides>
 			<div id=container>
 				<div id=images_container>
 					<div class=img_box>
-						<img src="image/01.jpg" alt="img01"/>
+						<img src="image/01.jpg" alt="img01">
 					</div>
 					<div class=img_box>
-						<img src="image/02.jpg" alt="img02"/>
+						<img src="image/02.jpg" alt="img02">
 					</div>
 					<div class=img_box>
-						<img src="image/03.jpg" alt="img03"/>
+						<img src="image/03.jpg" alt="img03">
 					</div>
 					<div class=img_box>
-						<img src="image/04.jpg" alt="img04"/>
+						<img src="image/04.jpg" alt="img04">
 					</div>
 					<div class=img_box>
-						<img src="image/05.jpg" alt="img05"/>
+						<img src="image/05.jpg" alt="img05">
 					</div>
 				</div>
 			</div>
 		</div>
-		<div id=buttons>
-			<label for=slide1></label>
-			<label for=slide2></label>
-			<label for=slide3></label>
-			<label for=slide4></label>
-			<label for=slide5></label>
+		<div class="box">
+			<div id=labels>
+				<div class="text">«Крылья, ноги, хвосты»</div>
+				<div class="text">«Тимон и Пумба»</div>
+				<div class="text">«Трое из Простоквашино»</div>
+				<div class="text">«Ледниковый период»</div>
+				<div class="text">«Малыш и Карлсон»</div>
+			</div>
+
+			<div id=buttons>
+				<label for=slide1><span class="button"></span></label>
+				<label for=slide2><span class="button"></span></label>
+				<label for=slide3><span class="button"></span></label>
+				<label for=slide4><span class="button"></span></label>
+				<label for=slide5><span class="button"></span></label>
+			</div>
 		</div>
-		
 	</div>
 </body>
 </html>

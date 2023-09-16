@@ -81,7 +81,6 @@ input {
 #images_container {
 	width: 500%;
 	display: flex;
-	margin-left:-100%;
 }
 
 #slide1:checked ~ #slides #images_container { margin-left:0; }
@@ -95,50 +94,109 @@ input {
 }
 
 img {
-	width: 70%;
+	width: 60%;
+}
+
+.box{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 0 5%;
 }
 
 #buttons {
 	display: flex;
- 	gap: 1%;
-	justify-content: flex-end;
-	width: 95%;
 }
 
-
 label {
-	border-radius: 50%;
+	background: transparent;	
+	width: 2em;
+	height: 2em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.button{
 	width: 1em;
 	height: 1em;
+	border-radius: 50%;
 	background: #322ca3;
 	border: .1em solid #322ca3;
 }
 
-label:hover {
+label:hover { .button{
 	background: white;
 	cursor: pointer;
-	border: .1em solid white;
+	border: .1em solid white; }
 }
 
-#slide1:checked ~ #buttons label:nth-child(1),
-#slide2:checked ~ #buttons label:nth-child(2),
-#slide3:checked ~ #buttons label:nth-child(3),
-#slide4:checked ~ #buttons label:nth-child(4),
-#slide5:checked ~ #buttons label:nth-child(5) {
+#slide1:checked ~ .box #buttons label:nth-child(1) .button,
+#slide2:checked ~ .box #buttons label:nth-child(2) .button,
+#slide3:checked ~ .box #buttons label:nth-child(3) .button,
+#slide4:checked ~ .box #buttons label:nth-child(4) .button,
+#slide5:checked ~ .box #buttons label:nth-child(5) .button {
 	background: #2b2c33;
 	border: .1em solid #322ca3;
 }
 
-#slide1:checked ~ #buttons label:nth-child(1):hover,
-#slide2:checked ~ #buttons label:nth-child(2):hover,
-#slide3:checked ~ #buttons label:nth-child(3):hover,
-#slide4:checked ~ #buttons label:nth-child(4):hover,
-#slide5:checked ~ #buttons label:nth-child(5):hover {
+#slide1:checked ~ .box #buttons label:nth-child(1):hover .button,
+#slide2:checked ~ .box #buttons label:nth-child(2):hover .button,
+#slide3:checked ~ .box #buttons label:nth-child(3):hover .button,
+#slide4:checked ~ .box #buttons label:nth-child(4):hover .button,
+#slide5:checked ~ .box #buttons label:nth-child(5):hover .button {
 	background: #2b2c33;
 	border: .1em solid white;
 }
+#labels {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-top: -4.5em;
+}
 
-#images_container, #slider, #slides, #buttons, #buttons label {
+.text{
+	opacity: 0;
+	font-size:larger;
+}
+
+#slide1:checked ~ .box #labels div:nth-child(1),
+#slide2:checked ~ .box #labels div:nth-child(2),
+#slide3:checked ~ .box #labels div:nth-child(3),
+#slide4:checked ~ .box #labels div:nth-child(4),
+#slide5:checked ~ .box #labels div:nth-child(5){
+	order: 5; 
+	opacity: 1; 
+	transition: opacity 1s ease-in-out; 
+}
+
+
+#images_container, #slider, #slides, #buttons, #buttons label, .button{
 	transition: all 0.5s ease-out;
 }
 
+@media  (max-width: 768px) {
+    .box{
+		flex-direction: column-reverse;
+      }
+	#buttons{
+		justify-content: center;
+	}
+	#labels {
+		flex-direction: row;
+		align-items: flex-start;
+		margin-top: 0;
+		flex-flow: wrap;
+		overflow: hidden;
+  		height: 1.3em;
+	}
+	#slide1:checked ~ .box #labels div:nth-child(1),
+	#slide2:checked ~ .box #labels div:nth-child(2),
+	#slide3:checked ~ .box #labels div:nth-child(3),
+	#slide4:checked ~ .box #labels div:nth-child(4),
+	#slide5:checked ~ .box #labels div:nth-child(5){
+	order: -1; 
+}
+
+} 
