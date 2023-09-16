@@ -151,7 +151,7 @@ label:hover { .button{
 }
 #labels {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 }
 .text{
 	opacity: 0;
