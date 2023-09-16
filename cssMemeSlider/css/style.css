@@ -178,10 +178,25 @@ label:hover { .button{
 
 @media  (max-width: 768px) {
     .box{
-        flex-direction: column-reverse;
+		flex-direction: column-reverse;
       }
 	#buttons{
-	  justify-content: center;
+		justify-content: center;
 	}
+	#labels {
+		flex-direction: row;
+		align-items: flex-start;
+		margin-top: 0;
+		flex-flow: wrap;
+		overflow: hidden;
+  		height: 1.3em;
+	}
+	#slide1:checked ~ .box #labels div:nth-child(1),
+	#slide2:checked ~ .box #labels div:nth-child(2),
+	#slide3:checked ~ .box #labels div:nth-child(3),
+	#slide4:checked ~ .box #labels div:nth-child(4),
+	#slide5:checked ~ .box #labels div:nth-child(5){
+	order: -1; 
+}
 
 } 
